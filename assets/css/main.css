@@ -1,0 +1,123 @@
+:root {
+    --background: #100f11;
+    --header: #f8f3ff;
+    --text: #c9c2d3;
+
+    --layer1: #1e1d21;
+    --layer2: #2e2d33;
+    --layer3: #3e3d45;
+    --layer4: #4e4d57;
+
+    --border1: #4c4953;
+    --border2: #5c5965;
+    --border3: #6d6977;
+    --border4: #7e7989;
+
+    --primary: #7e38ff;
+    --primary-hover: #5321a3;
+
+    --b-radius-btn: 0.5rem;
+    --b-radius-input: 0.5rem;
+    --b-radius-card: 0.4rem;
+
+    --transition: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+    font-family: 'PP Neue Montreal', sans-serif;
+    background-color: var(--background);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700 !important;
+    color: var(--header);
+}
+
+p, li {
+    color: var(--text);
+    font-weight: 400 !important;
+}
+
+.vh-35 {
+    height: 35dvh;
+}
+
+.form-check-input {
+    clip: rect(0 0 0 0);
+    position: absolute;
+    pointer-events: none;
+}
+
+.btn-radio {
+    width: 100%;
+    border-radius: var(--b-radius-card);
+    border: 1px solid var(--border1);
+    background-color: var(--layer1);
+    color: var(--text);
+    font-weight: 400;
+    padding: 12px 24px;
+    margin-bottom: 3px;
+    text-align: left;
+    transition: background-color 0.2s var(--transition), border-color 0.2s var(--transition), color 0.2s var(--transition);
+}
+
+.btn-check+.btn:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+    color: var(--header);
+}
+
+.btn-check:checked+.btn {
+    border-color: var(--primary);
+    background-color: var(--primary);
+    color: var(--header);
+}
+
+.option {
+    border-radius: var(--b-radius-card);
+    border: 1px solid var(--border1);
+    background-color: var(--layer1);
+    color: var(--text);
+    font-weight: 400;
+    transition: background-color 0.2s var(--transition), border-color 0.2s var(--transition), color 0.2s var(--transition);
+    display: flex;
+    align-items: center;
+    padding: 12px 24px;
+
+    &:hover {
+        background-color: var(--primary-hover);
+        border-color: var(--primary-hover);
+        color: var(--header);
+    }
+
+    & > h3 {
+        margin: 0 0 0 1rem;
+    }
+
+    &.option-winner {
+        border-color: var(--primary);
+        background-color: var(--primary);
+        color: var(--header);
+    }
+
+    & > .number {
+        font-size: 1rem;
+        font-weight: 700;
+        margin-right: 1rem;
+        background-color: var(--layer3);
+        border: 1px solid var(--border3);
+        color: var(--header);
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    & > .number.number-winner {
+        background-color: var(--header);
+        border-color: var(--header);
+        color: var(--background);
+    }
+}

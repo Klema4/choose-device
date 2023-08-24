@@ -1,0 +1,27 @@
+
+[
+    {
+        "name": "Samsung Galaxy Buds 2 Pro",
+        "image": "galaxy-buds-pro-2_xxs.webp",
+        "price": 4699,
+        "description": "Wireless earbuds",
+        "type": "Buds",
+        "compability": "Android",
+        "shape": "Buds",
+        "material": "Matte plastic",
+        "color": "Black, White, Lavender",
+        "percentage": 0
+    },
+    {
+        "name": "Samsung Galaxy Buds 2",
+        "image": "samsung-galaxy-buds-2_xxs.webp",
+        "price": 2899,
+        "description": "Wireless earbuds",
+        "type": "Buds",
+        "compability": "Android",
+        "shape": "Buds",
+        "material": "Plastic",
+        "color": "Black, White, Onyx, Graphite, Purple",
+        "percentage": 0
+    }
+]

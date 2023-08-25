@@ -110,7 +110,7 @@ function generate() {
             }
 
             switch (shape) {
-                case "buds":
+                case "full-buds":
                     // Add 10% into "percentage" from JSON file to all items, that have "shape" value "buds"
                     for (let i = 0; i < data.length; i++) {
                         if (data[i].shape == "Buds") {

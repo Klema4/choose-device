@@ -55,9 +55,9 @@
     </div>
     <div class="vh-25 d-none d-lg-block"></div>
     <div class="container">
-        <h1 class="display-1 mb-5">Jdeme hledat sluchátka do uší!</h1>
+        <h1 class="display-2 mb-5">Jdeme hledat sluchátka do uší!</h1>
         <form id="earphones-price" class="mb-4">
-            <h1 class="display-4">Jaký máš budget?</h1>
+            <h1 class="display-5">Jaký máš budget?</h1>
             <input type="radio" class="btn-check" name="options" id="price-1000" autocomplete="off" checked>
             <label class="btn btn-radio" for="price-1000">Do 1000Kč</label>
             
@@ -74,7 +74,7 @@
             <label class="btn btn-radio" for="price-unlimited">Neomezený budget ♾️</label>
         </form>
         <form id="earphones-type" class="mb-4">
-            <h1 class="display-4">Preferuješ špuntová nebo pecková sluchátka?</h1>
+            <h1 class="display-5">Preferuješ špuntová nebo pecková sluchátka?</h1>
             <input type="radio" class="btn-check" name="options" id="buds" autocomplete="off" checked>
             <label class="btn btn-radio" for="buds">Špuntová</label>
             
@@ -82,7 +82,7 @@
             <label class="btn btn-radio" for="in-ear">Pecková</label>
         </form>
         <form id="earphones-compability" class="mb-4">
-            <h1 class="display-4">Jaký operační systém má tvé zařízení, na kterém budeš poslouchat hudbu?</h1>
+            <h1 class="display-5">Jaký operační systém má tvé zařízení, na kterém budeš poslouchat hudbu?</h1>
             <p>Nezapomeň, že Android sluchátka mohou mít možnost propojení s Windows a Apple sluchátka s MacBooky!<br>Většina sluchátek funguje na obě platformy, ale bereme pouze jejich primární platformu použití (Android na Android, AirPody na iOS).</p>
             <input type="radio" class="btn-check" name="options" id="android" autocomplete="off" checked>
             <label class="btn btn-radio" for="android">Android zařízení</label>
@@ -91,10 +91,10 @@
             <label class="btn btn-radio" for="ios">iOS zařízení</label>
         </form>
         <form id="earphones-shape" class="mb-4">
-            <h1 class="display-4">Máš radši sluchátka bez nožičky nebo sluchátka s ovládací nožičkou?</h1>
+            <h1 class="display-5">Máš radši sluchátka bez nožičky nebo sluchátka s ovládací nožičkou?</h1>
             <p>Ovládací nožičku mohou mít špuntová i pecková sluchátka!</p>
-            <input type="radio" class="btn-check" name="options" id="buds" autocomplete="off" checked>
-            <label class="btn btn-radio" for="buds">Bez ovládací nožičky (dotyková plocha na sluchátku)</label>
+            <input type="radio" class="btn-check" name="options" id="full-buds" autocomplete="off" checked>
+            <label class="btn btn-radio" for="full-buds">Bez ovládací nožičky (dotyková plocha na sluchátku)</label>
             
             <input type="radio" class="btn-check" name="options" id="stick" autocomplete="off">
             <label class="btn btn-radio" for="stick">S ovládací nožičkou (dotyk na nožičku sluchátka)</label>
@@ -104,6 +104,32 @@
             <button class="btn btn-primary btn-lg col-12 col-lg-auto" onclick="generate()">Vygenerovat výsledky</button>
             <div class="row m-0 w-100 g-2" id="row"></div>
         </div>
+
+        <footer class="row w-100 m-0 mt-5 mb-3 align-items-start">
+            <div class="col-12 col-lg-4 mb-4 mb-lg-0">
+                <div class="d-flex align-items-center">
+                    <img src="./assets/content/PickPerfectLogo.svg" alt="Logo" width="48px">
+                    <p class="mb-0 ms-3">© 2023 PickPerfect<br><a href="https://smirkhat.org">SmirkHat.org</a> projekt</p>
+                </div>
+                <p class="small mt-2 mb-0">Data o produktech a jejich fotkách jsou ve vlastnictví značek k nim patřící. Nepatříme ani nespolupracujeme s výrobcema. Fotky produktu jsou autorské dílo výrobce.<br>Jsme Cookies-free stránka! 🥰🍪</p>
+            </div>
+            <div class="col"></div>
+            <div class="col-12 col-lg text-lg-end">
+                <h4>Vyber si podle sebe</h4>
+                <ul class="list-unstyled">
+                    <li class="nav-item"><a href="#" class="nav-link">Sluchátka do uší</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Telefony</a></li>
+                </ul>
+            </div>
+            <div class="col-12 col-lg text-lg-end">
+                <h4>Partneři projektu</h4>
+                <ul class="list-unstyled">
+                    <li class="nav-item"><a href="#" class="nav-link">SmirkHat.org</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">SmirkHat.org</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">SmirkHat.org</a></li>
+                </ul>
+            </div>
+        </footer>
     </div>
 
     <script src="./assets/js/earphones/earphones.js"></script>

@@ -38,6 +38,16 @@ p, li {
     font-weight: 400 !important;
 }
 
+a {
+    color: var(--primary);
+    font-weight: 400 !important;
+    transition: color 0.2s var(--transition);
+}
+
+a:hover {
+    color: var(--primary-hover);
+}
+
 .vh-25 {
     height: 25dvh;
 }
@@ -49,6 +59,21 @@ p, li {
     padding: 1rem calc(0.5rem + 0.5vw);
     border-radius: var(--b-radius-btn);
     transition: background-color 0.2s var(--transition), border-color 0.2s var(--transition), color 0.2s var(--transition);
+}
+
+footer {
+    background-color: var(--layer1);
+    border: 1px solid var(--border1);
+    color: var(--header);
+    padding: 1rem calc(0.5rem + 0.5vw);
+    border-radius: var(--b-radius-btn);
+    transition: background-color 0.2s var(--transition), border-color 0.2s var(--transition), color 0.2s var(--transition);
+}
+
+footer:hover {
+    background-color: var(--layer2);
+    border-color: var(--border2);
+    color: var(--header);
 }
 
 .navbar-brand {

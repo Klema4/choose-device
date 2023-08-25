@@ -300,6 +300,22 @@ function generate() {
                     break;
             }
 
+            let allItems = 0;
+            let percentageSum = 0;
+
+            // Sečti všechny "percentage" ze všech položek
+            for (let i = 0; i < data.length; i++) {
+                allItems++;
+                percentageSum = percentageSum + data[i].percentage;
+            }
+
+            // Vypočti průměr ze všech "percentage" ze všech položek
+            percentageAverage = percentageSum / data.length;
+
+            for (let i = 0; i < data.length; i++) {
+                // Vypočti rozdíl mezi průměrem a jednotlivými "percentage" ze všech položek
+                data[i].percentage = data[i].percentage - percentageAverage;
+            }
 
             // Delete all HTML elements from "row" id
             document.getElementById("row").innerHTML = "";

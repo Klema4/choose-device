@@ -3,6 +3,7 @@
     {
         "name": "Samsung Galaxy Buds 2 Pro",
         "image": "galaxy-buds-pro-2_xxs.webp",
+        "manufacturer": "Samsung",
         "price": 4699,
         "description": "Wireless earbuds",
         "type": "Buds",
@@ -10,11 +11,19 @@
         "shape": "Buds",
         "material": "Matte plastic",
         "color": "Black, White, Lavender",
+        "microphone": true,
+        "hifi": true,
+        "charging": "USB-C, Wireless",
+        "connectivity": "Bluetooth",
+        "noise_cancelling": "ANC",
+        "ip_rating": "IPX7",
+        "battery_life": 18,
         "percentage": 0
     },
     {
         "name": "Samsung Galaxy Buds 2",
         "image": "samsung-galaxy-buds-2_xxs.webp",
+        "manufacturer": "Samsung",
         "price": 2899,
         "description": "Wireless earbuds",
         "type": "Buds",
@@ -22,6 +31,13 @@
         "shape": "Buds",
         "material": "Plastic",
         "color": "Black, White, Onyx, Graphite, Purple",
+        "microphone": true,
+        "hifi": false,
+        "charging": "USB-C, Wireless",
+        "connectivity": "Bluetooth",
+        "noise_cancelling": "ANC",
+        "ip_rating": "IPX2",
+        "battery_life": 29,
         "percentage": 0
     }
 ]

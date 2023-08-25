@@ -13,6 +13,13 @@ function generate() {
             const type = document.querySelector('form#earphones-type input:checked').id;
             const compability = document.querySelector('form#earphones-compability input:checked').id;
             const shape = document.querySelector('form#earphones-shape input:checked').id;
+            const mic = document.querySelector('form#earphones-mic input:checked').id;
+            const hifi = document.querySelector('form#earphones-hifi input:checked').id;
+            const charging = document.querySelector('form#earphones-charging input:checked').id;
+            const connectivity = document.querySelector('form#earphones-connectivity input:checked').id;
+            const noise_cancelling = document.querySelector('form#earphones-noise-cancelling input:checked').id;
+            const ip_rating = document.querySelector('form#earphones-ip-rating input:checked').id;
+            const battery_life = document.querySelector('form#earphones-battery-life input:checked').id;
 
             switch (price) {
                 case "price-1000":
@@ -47,8 +54,8 @@ function generate() {
                         }
                     }
                     break;
-                default:
-                    // Add 10% into "percentage" from JSON file to all items, that have "price" value lower than 1000
+                case "price-unlimited":
+                    // Add 10% into "percentage" from JSON file to all items, that have "price" value higher than 5000
                     for (let i = 0; i < data.length; i++) {
                         data[i].percentage = data[i].percentage + 10;
                     }
@@ -72,14 +79,6 @@ function generate() {
                         }
                     }
                     break;
-                default:
-                    // Add 10% into "percentage" from JSON file to all items, that have "price" value lower than 1000
-                    for (let i = 0; i < data.length; i++) {
-                        if (data[i].price < 1000) {
-                            data[i].percentage = data[i].percentage + 10;
-                        }
-                    }
-                    break;
             }
 
             switch (compability) {
@@ -96,14 +95,6 @@ function generate() {
                     for (let i = 0; i < data.length; i++) {
                         if (data[i].compability == "iOS") {
                             data[i].percentage = data[i].percentage + 15;
-                        }
-                    }
-                    break;
-                default:
-                    // Add 10% into "percentage" from JSON file to all items, that have "price" value lower than 1000
-                    for (let i = 0; i < data.length; i++) {
-                        if (data[i].price < 1000) {
-                            data[i].percentage = data[i].percentage + 10;
                         }
                     }
                     break;
@@ -126,15 +117,189 @@ function generate() {
                         }
                     }
                     break;
-                default:
-                    // Add 10% into "percentage" from JSON file to all items, that have "price" value lower than 1000
+            }
+
+            switch (mic) {
+                case "mic":
+                    // Add 9% into "percentage" from JSON file to all items, that have "mic" value "true"
                     for (let i = 0; i < data.length; i++) {
-                        if (data[i].price < 1000) {
-                            data[i].percentage = data[i].percentage + 10;
+                        if (data[i].mic == true) {
+                            data[i].percentage = data[i].percentage + 9;
+                        }
+                    }
+                    break;
+                case "no-mic":
+                    // Add 0% into "percentage" from JSON file to all items, that have "mic" value "false"
+                    for (let i = 0; i < data.length; i++) {
+                        if (data[i].mic == false) {
+                            data[i].percentage = data[i].percentage + 0;
                         }
                     }
                     break;
             }
+
+            switch (hifi) {
+                case "hifi":
+                    // Add 13% into "percentage" from JSON file to all items, that have "hifi" value "true"
+                    for (let i = 0; i < data.length; i++) {
+                        if (data[i].hifi == true) {
+                            data[i].percentage = data[i].percentage + 13;
+                        }
+                    }
+                    break;
+                case "no-hifi":
+                    // Add 0% into "percentage" from JSON file to all items, that have "hifi" value "false"
+                    for (let i = 0; i < data.length; i++) {
+                        if (data[i].hifi == false) {
+                            data[i].percentage = data[i].percentage + 0;
+                        }
+                    }
+                    break;
+            }
+
+            switch (charging) {
+                case "usb-c-wireless":
+                    // Add 12% into "percentage" from JSON file to all items, that have "charging" value "USB-C/Wireless"
+                    for (let i = 0; i < data.length; i++) {
+                        if (data[i].charging == "USB-C, Wireless") {
+                            data[i].percentage = data[i].percentage + 12;
+                        }
+                    }
+                    break;
+                case "usb-c":
+                    // Add 10% into "percentage" from JSON file to all items, that have "charging" value "USB-C"
+                    for (let i = 0; i < data.length; i++) {
+                        if (data[i].charging == "USB-C") {
+                            data[i].percentage = data[i].percentage + 10;
+                        }
+                    }
+                    break;
+                case "lightning":
+                    // Add 20% into "percentage" from JSON file to all items, that have "charging" value "Lightning"
+                    for (let i = 0; i < data.length; i++) {
+                        if (data[i].charging == "Lightning") {
+                            data[i].percentage = data[i].percentage + 20;
+                        }
+                    }
+                    break;
+            }
+
+            switch (connectivity) {
+                case "bluetooth":
+                    // Add 20% into "percentage" from JSON file to all items, that have "connectivity" value "Bluetooth"
+                    for (let i = 0; i < data.length; i++) {
+                        if (data[i].connectivity == "Bluetooth") {
+                            data[i].percentage = data[i].percentage + 20;
+                        }
+                    }
+                    break;
+                case "3mm-jack":
+                    // Add 20% into "percentage" from JSON file to all items, that have "connectivity" value "3.5mm Jack"
+                    for (let i = 0; i < data.length; i++) {
+                        if (data[i].connectivity == "3.5mm Jack") {
+                            data[i].percentage = data[i].percentage + 20;
+                        }
+                    }
+                    break;
+                case "dongle":
+                    // Add 20% into "percentage" from JSON file to all items, that have "connectivity" value "Dongle"
+                    for (let i = 0; i < data.length; i++) {
+                        if (data[i].connectivity == "Dongle") {
+                            data[i].percentage = data[i].percentage + 20;
+                        }
+                    }
+                    break;
+            }
+
+            switch (noise_cancelling) {
+                case "anc":
+                    // Add 8% into "percentage" from JSON file to all items, that have "noise_cancelling" value "ANC"
+                    for (let i = 0; i < data.length; i++) {
+                        if (data[i].noise_cancelling == "ANC") {
+                            data[i].percentage = data[i].percentage + 8;
+                        }
+                    }
+                    break;
+                case "pnc-enc":
+                    // Add 8% into "percentage" from JSON file to all items, that have "noise_cancelling" value "No ANC"
+                    for (let i = 0; i < data.length; i++) {
+                        if (data[i].noise_cancelling == "ENC") {
+                            data[i].percentage = data[i].percentage + 8;
+                        }
+                    }
+                    break;
+                case "no-anc":
+                    // Add 0% into "percentage" from JSON file to all items, that have "noise_cancelling" value "No ANC"
+                    for (let i = 0; i < data.length; i++) {
+                        if (data[i].noise_cancelling == "None") {
+                            data[i].percentage = data[i].percentage + 0;
+                        }
+                    }
+                    break;
+            }
+
+            switch (ip_rating) {
+                case "ipx2":
+                    // Add 7% into "percentage" from JSON file to all items, that have "ip_rating" value "IPX2"
+                    for (let i = 0; i < data.length; i++) {
+                        if (data[i].ip_rating == "IPX2") {
+                            data[i].percentage = data[i].percentage + 7;
+                        }
+                    }
+                    break;
+                case "ipx3-5":
+                    // Add 7% into "percentage" from JSON file to all items, that have "ip_rating" value "IPX3" or "IPX4" or "IPX5"
+                    for (let i = 0; i < data.length; i++) {
+                        if (data[i].ip_rating == "IPX3" || data[i].ip_rating == "IPX4" || data[i].ip_rating == "IPX5") {
+                            data[i].percentage = data[i].percentage + 7;
+                        }
+                    }
+                    break;
+                case "ipx6-8":
+                    // Add 7% into "percentage" from JSON file to all items, that have "ip_rating" value "IPX6" or "IPX7" or "IPX8"
+                    for (let i = 0; i < data.length; i++) {
+                        if (data[i].ip_rating == "IPX6" || data[i].ip_rating == "IPX7" || data[i].ip_rating == "IPX8") {
+                            data[i].percentage = data[i].percentage + 7;
+                        }
+                    }
+                    break;
+            }
+
+            switch (battery_life) {
+                case "10-19h":
+                    // Add 11% into "percentage" from JSON file to all items, that have "battery_life" value between 10 and 19
+                    for (let i = 0; i < data.length; i++) {
+                        if (data[i].battery_life >= 10) {
+                            data[i].percentage = data[i].percentage + 11;
+                        }
+                    }
+                    break;
+                case "20-29h":
+                    // Add 11% into "percentage" from JSON file to all items, that have "battery_life" value between 20 and 29
+                    for (let i = 0; i < data.length; i++) {
+                        if (data[i].battery_life >= 20) {
+                            data[i].percentage = data[i].percentage + 11;
+                        }
+                    }
+                    break;
+                case "30-39h":
+                    // Add 11% into "percentage" from JSON file to all items, that have "battery_life" value between 30 and 39
+                    for (let i = 0; i < data.length; i++) {
+                        if (data[i].battery_life >= 30) {
+                            data[i].percentage = data[i].percentage + 11;
+                        }
+                    }
+                    break;
+                case "40h":
+                    // Add 11% into "percentage" from JSON file to all items, that have "battery_life" value higher than 40
+                    for (let i = 0; i < data.length; i++) {
+                        if (data[i].battery_life >= 40) {
+                            data[i].percentage = data[i].percentage + 11;
+                        }
+                    }   
+                    break;
+            }
+
 
             // Delete all HTML elements from "row" id
             document.getElementById("row").innerHTML = "";

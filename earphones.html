@@ -99,6 +99,86 @@
             <input type="radio" class="btn-check" name="options" id="stick" autocomplete="off">
             <label class="btn btn-radio" for="stick">S ovládací nožičkou (dotyk na nožičku sluchátka)</label>
         </form>
+        <form id="earphones-mic" class="mb-4">
+            <h1 class="display-5">Mají sluchátka disponovat mikrofonem?</h1>
+            <input type="radio" class="btn-check" name="options" id="mic" autocomplete="off" checked>
+            <label class="btn btn-radio" for="mic">Ano</label>
+            
+            <input type="radio" class="btn-check" name="options" id="no-mic" autocomplete="off">
+            <label class="btn btn-radio" for="no-mic">Ne</label>
+        </form>
+        <form id="earphones-hifi" class="mb-4">
+            <h1 class="display-5">Chceš, aby byla sluchátka Hi-Fi?</h1>
+            <p>Hi-Fi sluchátka mají lepší zvukovou kvalitu, ale některé jsou podstatně dražší. Plného využití dosáhneš pouze v pár aplikacích, pokud podporují možnost kvalitního přehrávání zvuku (např. Tidal nebo Apple Music).</p>
+            <input type="radio" class="btn-check" name="options" id="hifi" autocomplete="off" checked>
+            <label class="btn btn-radio" for="hifi">Ano</label>
+            
+            <input type="radio" class="btn-check" name="options" id="no-hifi" autocomplete="off">
+            <label class="btn btn-radio" for="no-hifi">Ne</label>
+        </form>
+        <form id="earphones-charging" class="mb-4">
+            <h1 class="display-5">Jaké typy nabíjení mají sluchátka nabízet?</h1>
+            <p>Vztahuje se na jejich nabíjecí pouzdro. Sluchátka z 99% se nabíjí bezdrátově v pouzdře.</p>
+            <input type="radio" class="btn-check" name="options" id="usb-c-wireless" autocomplete="off" checked>
+            <label class="btn btn-radio" for="usb-c-wireless">USB-C a bezdrátové nabíjení</label>
+            
+            <input type="radio" class="btn-check" name="options" id="usb-c" autocomplete="off">
+            <label class="btn btn-radio" for="usb-c">USB-C bez bezdrátového nabíjení</label>
+
+            <input type="radio" class="btn-check" name="options" id="lightning" autocomplete="off">
+            <label class="btn btn-radio" for="lightning">Lightning (AirPody)</label>
+        </form>
+        <form id="earphones-connectivity" class="mb-4">
+            <h1 class="display-5">Jaké spojení se zařízením mají sluchátka nabízet?</h1>
+            <p>Je možné, že v aktuální chvíli nejsou v seznamu žádné 3.5mm Jack nebo Dongle sluchátka, protože většina výrobců dávno přešla na bezdrát. Pokud máš zájem sem zařadit nějaká sluchátka s tímto typem, otevři si novou chybu na našem GitHubu, nebo nás kontaktuj na Discordu (@klema).</p>
+            <input type="radio" class="btn-check" name="options" id="bluetooth" autocomplete="off" checked>
+            <label class="btn btn-radio" for="bluetooth">Bluetooth připojení</label>
+            
+            <input type="radio" class="btn-check" name="options" id="3mm-jack" autocomplete="off">
+            <label class="btn btn-radio" for="3mm-jack">3.5mm Jack kabel</label>
+
+            <input type="radio" class="btn-check" name="options" id="dongle" autocomplete="off">
+            <label class="btn btn-radio" for="dongle">USB(-C) Dongle (např. do napájecího konektoru telefonu)</label>
+        </form>
+        <form id="earphones-noise-cancelling" class="mb-4">
+            <h1 class="display-5">Mají sluchátka potlačovat okolní hluk?</h1>
+            <p>K těmto sluchátkům automaticky patří i malinké mikrofony, které snímají okolní prostředí. Doporučujeme proto vybrat možnost "Ano" u "Mají sluchátka disponovat mikrofonem?", pokud máš zájem mít potlačení hluku.<br>TIP: Pasivní a Aktivní potlačení má mezi sebou velký cenový rozdíl.</p>
+            <input type="radio" class="btn-check" name="options" id="anc" autocomplete="off" checked>
+            <label class="btn btn-radio" for="anc">Aktivní potlačení hluku (ANC)</label>
+            
+            <input type="radio" class="btn-check" name="options" id="pnc-enc" autocomplete="off">
+            <label class="btn btn-radio" for="pnc-enc">Pasivní potlačení hluku (PNC/ENC)</label>
+
+            <input type="radio" class="btn-check" name="options" id="no-anc" autocomplete="off">
+            <label class="btn btn-radio" for="no-anc">Nepotřebuji potlačení hluku</label>
+        </form>
+        <form id="earphones-ip-rating" class="mb-4">
+            <h1 class="display-5">Chceš, aby sluchátka disponovala nějakým stupněm krytí vůči vodě?</h1>
+            <p>Data bereme z IP-ratingů sluchátek dle výrobce na jejich webu, popřípadě eshopech. IP rating má dvě možnosti - Krytí vůči vodě a vůči prachu. Většina sluchátek do uší disponuje pouze krytím vůči vodě, proto zde bude moci na výběr pouze mezi stupni krytí proti vodě.<br>TIP: Čím větší číslo, tím lepší. IPX1 je horší krytí než IPX8. Více se můžeš dočíst <a href="https://cs.wikipedia.org/wiki/Stupe%C5%88_kryt%C3%AD" target="_blank">na Wikipedii</a>.</p>
+            <input type="radio" class="btn-check" name="options" id="ipx2" autocomplete="off" checked>
+            <label class="btn btn-radio" for="ipx2">Mají alespoň ochranu IPX2 (do fitness, malinký stupeň krytí vůči vodě)</label>
+            
+            <input type="radio" class="btn-check" name="options" id="ipx3-5" autocomplete="off">
+            <label class="btn btn-radio" for="ipx3-5">IPX3 až IPX-5 (na běhání venku, větší stupeň krytí)</label>
+
+            <input type="radio" class="btn-check" name="options" id="ipx6-8" autocomplete="off">
+            <label class="btn btn-radio" for="ipx6-8">IPX6 až IPX8 (ideální za jakýkoliv podmínek)</label>
+        </form>
+        <form id="earphones-battery-life" class="mb-4">
+            <h1 class="display-5">Jak dlouho mají sluchátka s krabičkou vydržet na jedno nabití?</h1>
+            <p>Výdrž baterie záleží na tom, jak moc člověk využívá funkce jako mikrofon, potlačení hluku, přehrávání hudby nahlas a podobně. Data o výdržby bereme tak, jak jsou udaná na stránkách výrobce, popřípadě na eshopech (tím pádem i s kapacitou krabičky).</p>
+            <input type="radio" class="btn-check" name="options" id="10-19h" autocomplete="off" checked>
+            <label class="btn btn-radio" for="10-19h">10 až 19 hodin na jedno nabití</label>
+            
+            <input type="radio" class="btn-check" name="options" id="20-29h" autocomplete="off">
+            <label class="btn btn-radio" for="20-29h">20 až 29 hodin na jedno nabití</label>
+
+            <input type="radio" class="btn-check" name="options" id="30-39h" autocomplete="off">
+            <label class="btn btn-radio" for="30-39h">30 až 39 hodin na jedno nabití</label>
+
+            <input type="radio" class="btn-check" name="options" id="40h" autocomplete="off">
+            <label class="btn btn-radio" for="40h">40 hodin a více na jedno nabití</label>
+        </form>
         <div>
             <h1 class="display-3 mt-5 pt-5">Výsledky podle odpovědí</h1>
             <button class="btn btn-primary btn-lg col-12 col-lg-auto" onclick="generate()">Vygenerovat výsledky</button>

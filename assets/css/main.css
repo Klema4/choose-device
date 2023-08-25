@@ -38,8 +38,41 @@ p, li {
     font-weight: 400 !important;
 }
 
-.vh-35 {
-    height: 35dvh;
+.vh-25 {
+    height: 25dvh;
+}
+
+.navbar {
+    background-color: var(--layer1);
+    border: 1px solid var(--border1);
+    color: var(--header);
+    padding: 1rem calc(0.5rem + 0.5vw);
+    border-radius: var(--b-radius-btn);
+    transition: background-color 0.2s var(--transition), border-color 0.2s var(--transition), color 0.2s var(--transition);
+}
+
+.navbar-brand {
+    color: var(--header);
+    font-weight: 700;
+    transition: color 0.2s var(--transition);
+}
+
+.navbar-brand:hover {
+    color: var(--primary);
+}
+
+.nav-link {
+    color: var(--header);
+    font-weight: 400;
+    transition: color 0.2s var(--transition);
+}
+
+.nav-link:hover, .nav-link:focus, .nav-link:active {
+    color: var(--primary);
+}
+
+.active, .nav-link.show {
+    color: var(--primary) !important;
 }
 
 .form-check-input {

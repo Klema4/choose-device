@@ -1,17 +1,17 @@
 :root {
-    --background: #100f11;
-    --header: #f8f3ff;
-    --text: #c9c2d3;
+    --background: #0f1011;
+    --header: #f3faff;
+    --text: #c2cbd3;
 
-    --layer1: #1e1d21;
-    --layer2: #2e2d33;
-    --layer3: #3e3d45;
-    --layer4: #4e4d57;
+    --layer1: #1d1f21;
+    --layer2: #2d3033;
+    --layer3: #3d4145;
+    --layer4: #4d5257;
 
-    --border1: #4c4953;
-    --border2: #5c5965;
-    --border3: #6d6977;
-    --border4: #7e7989;
+    --border1: #494d53;
+    --border2: #595e65;
+    --border3: #696f77;
+    --border4: #798089;
 
     --primary: #20adff;
     --primary-hover: #187abb;

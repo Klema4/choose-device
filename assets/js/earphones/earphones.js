@@ -1,6 +1,4 @@
-let parsedData;
-
-async function generate() {
+function generate() {
     // Fetch JSON data
     fetch('./assets/js/earphones/earphones.json')
         .then(response => response.json())
@@ -10,48 +8,49 @@ async function generate() {
                 return parseFloat(b.percentage) - parseFloat(a.percentage);
             });
 
-            // get data from JSON file and store them in parsedData variable
-            parsedData = data;
-
-            // Get checked forms values from IDs (earphone-price, ...) and store them in variables for later use
-            let price = document.getElementById("earphones-price").value;
-            let type = document.getElementById("earphones-type").value;
-            let compability = document.getElementById("earphones-compability").value;
-            let shape = document.getElementById("earphones-shape").value;
-
-            console.log(price, type, compability, shape);
+            // Get checked radio button ID from form
+            const price = document.querySelector('form#earphones-price input:checked').id;
+            const type = document.querySelector('form#earphones-type input:checked').id;
+            const compability = document.querySelector('form#earphones-compability input:checked').id;
+            const shape = document.querySelector('form#earphones-shape input:checked').id;
 
             switch (price) {
                 case "price-1000":
                     // Add 10% into "percentage" from JSON file to all items, that have "price" value lower than 1000
                     for (let i = 0; i < data.length; i++) {
-                        if (data[i].price < 1000) {
+                        if (data[i].price <= 1000) {
                             data[i].percentage = data[i].percentage + 10;
                         }
                     }
                     break;
-                case "price-1000-2000":
+                case "price-2000":
                     // Add 10% into "percentage" from JSON file to all items, that have "price" value between 1000 and 2000
                     for (let i = 0; i < data.length; i++) {
-                        if (data[i].price > 1000 && data[i].price < 2000) {
+                        if (data[i].price <= 2000) {
                             data[i].percentage = data[i].percentage + 10;
                         }
                     }
                     break;
-                case "price-2000-3000":
-                    // Add 10% into "percentage" from JSON file to all items, that have "price" value between 2000 and 3000
+                case "price-3000":
+                    // Add 10% into "percentage" from JSON file to all items, that have "price" value under 3000
                     for (let i = 0; i < data.length; i++) {
-                        if (data[i].price > 2000 && data[i].price < 3000) {
+                        if (data[i].price <= 3000) {
                             data[i].percentage = data[i].percentage + 10;
                         }
                     }
                     break;
-                case "price-3000plus":
+                case "price-5000":
                     // Add 10% into "percentage" from JSON file to all items, that have "price" value higher than 3000
                     for (let i = 0; i < data.length; i++) {
-                        if (data[i].price > 3000) {
+                        if (data[i].price <= 5000) {
                             data[i].percentage = data[i].percentage + 10;
                         }
+                    }
+                    break;
+                default:
+                    // Add 10% into "percentage" from JSON file to all items, that have "price" value lower than 1000
+                    for (let i = 0; i < data.length; i++) {
+                        data[i].percentage = data[i].percentage + 10;
                     }
                     break;
             }
@@ -70,6 +69,14 @@ async function generate() {
                     for (let i = 0; i < data.length; i++) {
                         if (data[i].type == "In-Ear") {
                             data[i].percentage = data[i].percentage + 6;
+                        }
+                    }
+                    break;
+                default:
+                    // Add 10% into "percentage" from JSON file to all items, that have "price" value lower than 1000
+                    for (let i = 0; i < data.length; i++) {
+                        if (data[i].price < 1000) {
+                            data[i].percentage = data[i].percentage + 10;
                         }
                     }
                     break;
@@ -92,6 +99,14 @@ async function generate() {
                         }
                     }
                     break;
+                default:
+                    // Add 10% into "percentage" from JSON file to all items, that have "price" value lower than 1000
+                    for (let i = 0; i < data.length; i++) {
+                        if (data[i].price < 1000) {
+                            data[i].percentage = data[i].percentage + 10;
+                        }
+                    }
+                    break;
             }
 
             switch (shape) {
@@ -111,9 +126,18 @@ async function generate() {
                         }
                     }
                     break;
+                default:
+                    // Add 10% into "percentage" from JSON file to all items, that have "price" value lower than 1000
+                    for (let i = 0; i < data.length; i++) {
+                        if (data[i].price < 1000) {
+                            data[i].percentage = data[i].percentage + 10;
+                        }
+                    }
+                    break;
             }
 
-            console.log(parsedData);
+            // Delete all HTML elements from "row" id
+            document.getElementById("row").innerHTML = "";
 
             for (let i = 0; i < 1; i++) {
                 const winnerContainer = document.createElement("div");
@@ -127,16 +151,25 @@ async function generate() {
                 winnerNumber.textContent = data[0].percentage + "%";
 
                 const winnerImage = document.createElement("img");
-                winnerImage.src = `./assets/content/earphones/${data[0].imagePath}`;
+                winnerImage.src = `./assets/content/earphones/${data[0].image}`;
                 winnerImage.alt = "Obrázek";
                 winnerImage.width = "48";
 
                 const winnerHeading = document.createElement("h3");
                 winnerHeading.textContent = data[0].name;
 
+                const winnerCompability = document.createElement("p");
+                winnerCompability.textContent = data[0].compability;
+
+                const winnerPrice = document.createElement("p");
+                winnerPrice.className = "price";
+                winnerPrice.textContent = data[0].price + " Kč";
+
                 winnerOption.appendChild(winnerNumber);
                 winnerOption.appendChild(winnerImage);
                 winnerOption.appendChild(winnerHeading);
+                winnerOption.appendChild(winnerCompability);
+                winnerOption.appendChild(winnerPrice);
                 winnerContainer.appendChild(winnerOption);
 
                 document.getElementById("row").appendChild(winnerContainer);
@@ -155,16 +188,25 @@ async function generate() {
                 itemNumber.textContent = data[i].percentage + "%";
 
                 const itemImage = document.createElement("img");
-                itemImage.src = `./assets/content/earphones/${data[i].imagePath}`;
+                itemImage.src = `./assets/content/earphones/${data[i].image}`;
                 itemImage.alt = "Obrázek";
                 itemImage.width = "48";
 
                 const itemHeading = document.createElement("h3");
                 itemHeading.textContent = data[i].name;
 
+                const itemPrice = document.createElement("p");
+                itemPrice.className = "price";
+                itemPrice.textContent = data[i].price + " Kč";
+
+                const itemCompability = document.createElement("p");
+                itemCompability.textContent = data[i].compability;
+
                 itemOption.appendChild(itemNumber);
                 itemOption.appendChild(itemImage);
                 itemOption.appendChild(itemHeading);
+                itemOption.appendChild(itemCompability);
+                itemOption.appendChild(itemPrice);
                 itemContainer.appendChild(itemOption);
 
                 document.getElementById("row").appendChild(itemContainer);

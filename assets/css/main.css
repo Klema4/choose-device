@@ -13,8 +13,8 @@
     --border3: #6d6977;
     --border4: #7e7989;
 
-    --primary: #7e38ff;
-    --primary-hover: #5321a3;
+    --primary: #20adff;
+    --primary-hover: #187abb;
 
     --b-radius-btn: 0.5rem;
     --b-radius-input: 0.5rem;
@@ -24,7 +24,7 @@
 }
 
 body {
-    font-family: 'PP Neue Montreal', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     background-color: var(--background);
 }
 
@@ -92,6 +92,19 @@ p, li {
 
     & > h3 {
         margin: 0 0 0 1rem;
+    }
+
+    & > p {
+        margin: 0 0 0 1rem;
+    }
+
+    & > p.price {
+        margin: 0 0 0 1rem;
+        background-color: var(--header);
+        border-radius: var(--b-radius-btn);
+        padding: 0.5rem 1rem;
+        color: var(--background);
+        font-weight: 700 !important;
     }
 
     &.option-winner {

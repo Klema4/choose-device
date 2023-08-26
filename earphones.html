@@ -17,7 +17,7 @@
     <meta content="PickPerfect | Sluchátka do uší" property="og:title" />
     <meta content="Sháníš nová sluchátka, která budou splňovat všechny tvé požadavky? Vyplň náš krátký formulář a vygeneruj si výsledky na míru tvým požadavkům!" property="og:description" />
     <meta content="https://pick-perfect.fun/earphones" property="og:url" />
-    <meta content="https://pick-perfect.fun/assets/content/PP_Banner_Web.png" property="og:image" />
+    <meta content="./assets/content/PP_Banner_Web.png" property="og:image" />
     <meta content="#20adff" data-react-helmet="true" name="theme-color" />
     <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -188,7 +188,13 @@
         <div>
             <h1 class="display-3 mt-5 pt-5">Výsledky podle odpovědí</h1>
             <button class="btn btn-primary btn-lg col-12 col-lg-auto" onclick="generate()">Vygenerovat výsledky</button>
-            <div class="row m-0 w-100 g-2" id="row"></div>
+            <div class="row m-0 w-100 g-2" id="row">
+                <div class="col-12">
+                    <div class="option option-winner">
+
+                    </div>
+                </div>
+            </div>
         </div>
 
         <footer class="row w-100 m-0 mt-5 mb-3 align-items-start">

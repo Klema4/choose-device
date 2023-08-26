@@ -192,3 +192,52 @@ footer:hover {
         color: var(--background);
     }
 }
+
+.background-image {
+    z-index: -1;
+    position: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &.earphones {
+        background-image: url('../content/main-site/nothing.png');
+        width: 720px;
+        height: 720px;
+        top: -10vw;
+        right: 2vh;
+        filter: blur(5px) brightness(0.5);
+    }
+
+    &.phones {
+        background-image: url('../content/main-site/main-kv-2023\ 1.png');
+        width: 720px;
+        height: 720px;
+        top: 25vw;
+        left: 2vh;
+        filter: blur(5px) brightness(0.5);
+    }
+
+    &.headphones {
+        background-image: url('../content/main-site/image\ 1.png');
+        width: 540px;
+        height: 600px;
+        top: 30vw;
+        right: 10vh;
+        filter: blur(5px) brightness(0.5);
+    }
+
+    @media screen and (max-width: 1919px) {
+        &.earphones {
+            display: none;
+        }
+
+        &.phones {
+            display: none;
+        }
+
+        &.headphones {
+            display: none;
+        }
+    }
+}

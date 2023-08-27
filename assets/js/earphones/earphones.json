@@ -1,6 +1,7 @@
 
 [
-    {
+    {   
+        "id": 0,
         "name": "Samsung Galaxy Buds 2 Pro",
         "image": "galaxy-buds-pro-2_xxs.webp",
         "manufacturer": "Samsung",
@@ -21,6 +22,7 @@
         "percentage": 0
     },
     {
+        "id": 1,
         "name": "Samsung Galaxy Buds 2",
         "image": "samsung-galaxy-buds-2_xxs.webp",
         "manufacturer": "Samsung",

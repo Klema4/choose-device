@@ -310,3 +310,32 @@ footer:hover {
         color: var(--text);
     }
 }
+
+.panel-list {
+    border-radius: var(--b-radius-card);
+    border: 1px solid var(--border1);
+    background-color: var(--layer1);
+    color: var(--text);
+    font-weight: 400;
+    padding: 12px calc(0.5rem + 0.5vw);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s var(--transition), border-color 0.2s var(--transition), color 0.2s var(--transition);
+
+    & > * > .btn {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    & > .image-panel {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 48px;
+        height: 48px;
+    }
+}

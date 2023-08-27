@@ -48,6 +48,35 @@ a:hover {
     color: var(--primary-hover);
 }
 
+.btn {
+    border-radius: var(--b-radius-btn);
+    transition: background-color 0.2s var(--transition), border-color 0.2s var(--transition), color 0.2s var(--transition);
+
+    &.btn-primary {
+        border: 1px solid var(--primary);
+        background-color: var(--primary);
+        color: var(--header);
+    }
+
+    &.btn-primary:hover {
+        background-color: var(--primary-hover);
+        border-color: var(--primary-hover);
+        color: var(--header);
+    }
+
+    &.btn-discord {
+        border: 1px solid #5865F2;
+        background-color: #5865F2;
+        color: var(--header);
+    }
+
+    &.btn-discord:hover {
+        background-color: #7289DA;
+        border-color: #7289DA;
+        color: var(--header);
+    }
+}
+
 .vh-25 {
     height: 25dvh;
 }
@@ -239,5 +268,45 @@ footer:hover {
         &.headphones {
             display: none;
         }
+    }
+}
+
+.card {
+    border-radius: var(--b-radius-card);
+    border: 1px solid var(--border1);
+    background-color: var(--layer1);
+    color: var(--text);
+    font-weight: 400;
+
+    & > .card-header {
+        border-bottom: 1px solid var(--border1);
+        background-color: var(--layer2);
+        color: var(--header);
+        font-weight: 700;
+        text-align: start;
+
+        & h1 {
+            margin-bottom: 0;
+        }
+    }
+
+    & > .card-body {
+        color: var(--text);
+    }
+}
+
+.form-control {
+    border-radius: var(--b-radius-input);
+    border: 1px solid var(--border2);
+    background-color: var(--layer2);
+    color: var(--text);
+    font-weight: 400;
+    padding: 12px 24px;
+    transition: background-color 0.2s var(--transition), border-color 0.2s var(--transition), color 0.2s var(--transition);
+
+    &:focus {
+        border-color: var(--primary);
+        background-color: var(--layer2);
+        color: var(--text);
     }
 }

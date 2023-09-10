@@ -322,74 +322,212 @@ function generate() {
 
             for (let i = 0; i < 1; i++) {
                 const winnerContainer = document.createElement("div");
-                winnerContainer.className = "col-12";
 
-                const winnerOption = document.createElement("div");
-                winnerOption.className = "option option-winner";
+                const winnerCode = `
+                <div class="col-12">
+                <div class="option option-winner">
+                    <div class="w-100 d-flex flex-column flex-lg-row justify-content-lg-between align-items-lg-center col-12">
+                        <div class="d-flex align-items-center">
+                            <div class="d-flex align-items-center">
+                                <div class="number number-winner flex-column text-center"><i class="ph-bold ph-crown fs-5"></i> ${data[0].percentage}%</div>
+                                <img src="./assets/content/earphones/${data[0].image}" alt="Obrázek" width="48">
+                            </div>
+                            <div>
+                                <h3 class="mb-0">${data[0].name}</h3>
+                                <h6 class="mb-0 fw-normal">${data[0].manufacturer}</h6>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="price">${data[0].price} Kč</div>
+                        </div>
+                    </div>
+                    <div class="option-specs option-specs-winner col-12">
+                        <div class="d-flex flex-column flex-lg-row w-100 justify-content-between align-items-center">
+                            <div class="d-flex justify-content-start w-100 row flex-wrap g-2">
+                                <div class="d-flex justify-content-start align-items-center col-6 col-lg-3 col-xl-2">
+                                    <i class="ph ph-cpu fs-4"></i>
+                                    <div class="ms-3">
+                                        <h6 class="mb-0 fw-normal">Platforma</h6>
+                                        <h4 class="mb-0">${data[0].compability}</h4>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-start align-items-center col-6 col-lg-3 col-xl-2">
+                                    <i class="ph ph-cell-signal-full fs-4"></i>
+                                    <div class="ms-3">
+                                        <h6 class="mb-0 fw-normal">Konektivita</h6>
+                                        <h4 class="mb-0">${data[0].connectivity}</h4>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-start align-items-center col-6 col-lg-3 col-xl-2">
+                                    <i class="ph ph-plug fs-4"></i>
+                                    <div class="ms-3">
+                                        <h6 class="mb-0 fw-normal">Nabíjení</h6>
+                                        <h4 class="mb-0">${data[0].charging}</h4>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-start align-items-center col-6 col-lg-3 col-xl-2">
+                                    <i class="ph ph-battery-full fs-4"></i>
+                                    <div class="ms-3">
+                                        <h6 class="mb-0 fw-normal">Výdrž baterie</h6>
+                                        <h4 class="mb-0">${data[0].battery_life}h</h4>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-start align-items-center col-6 col-lg-3 col-xl-2">
+                                    <i class="ph ph-drop fs-4"></i>
+                                    <div class="ms-3">
+                                        <h6 class="mb-0 fw-normal">Ochrana</h6>
+                                        <h4 class="mb-0">${data[0].ip_rating}</h4>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-start align-items-center col-6 col-lg-3 col-xl-2">
+                                    <i class="ph ph-wind fs-4"></i>
+                                    <div class="ms-3">
+                                        <h6 class="mb-0 fw-normal">Potlačení hluku</h6>
+                                        <h4 class="mb-0">${data[0].noise_cancelling}</h4>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-start align-items-center col-6 col-lg-3 col-xl-2">
+                                    <i class="ph ph-speaker-hifi fs-4"></i>
+                                    <div class="ms-3">
+                                        <h6 class="mb-0 fw-normal">Hi-Fi?</h6>
+                                        <h4 class="mb-0">${data[0].hifi}</h4>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-start align-items-center col-6 col-lg-3 col-xl-2">
+                                    <i class="ph ph-microphone fs-4"></i>
+                                    <div class="ms-3">
+                                        <h6 class="mb-0 fw-normal">Mikrofon</h6>
+                                        <h4 class="mb-0">${data[0].microphone}</h4>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-start align-items-center col-6 col-lg-3 col-xl-2">
+                                    <i class="ph ph-triangle fs-4"></i>
+                                    <div class="ms-3">
+                                        <h6 class="mb-0 fw-normal">Typ</h6>
+                                        <h4 class="mb-0">${data[0].type}</h4>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-start align-items-center col-6 col-lg-3 col-xl-2">
+                                    <i class="ph ph-hammer fs-4"></i>
+                                    <div class="ms-3">
+                                        <h6 class="mb-0 fw-normal">Materiál</h6>
+                                        <h4 class="mb-0">${data[0].material}</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>`
 
-                const winnerNumber = document.createElement("div");
-                winnerNumber.className = "number number-winner";
-                winnerNumber.textContent = data[0].percentage + "%";
-
-                const winnerImage = document.createElement("img");
-                winnerImage.src = `./assets/content/earphones/${data[0].image}`;
-                winnerImage.alt = "Obrázek";
-                winnerImage.width = "48";
-
-                const winnerHeading = document.createElement("h3");
-                winnerHeading.textContent = data[0].name;
-
-                const winnerCompability = document.createElement("p");
-                winnerCompability.textContent = data[0].compability;
-
-                const winnerPrice = document.createElement("p");
-                winnerPrice.className = "price";
-                winnerPrice.textContent = data[0].price + " Kč";
-
-                winnerOption.appendChild(winnerNumber);
-                winnerOption.appendChild(winnerImage);
-                winnerOption.appendChild(winnerHeading);
-                winnerOption.appendChild(winnerCompability);
-                winnerOption.appendChild(winnerPrice);
-                winnerContainer.appendChild(winnerOption);
-
+                winnerContainer.innerHTML = winnerCode;
+                
                 document.getElementById("row").appendChild(winnerContainer);
             }
 
             // Create HTML elements for all remaining items after sorting and append them to the "row" id
             for (let i = 1; i < data.length; i++) {
                 const itemContainer = document.createElement("div");
-                itemContainer.className = "col-12";
 
-                const itemOption = document.createElement("div");
-                itemOption.className = "option";
+                const itemCode = `
+                <div class="col-12">
+                <div class="option">
+                    <div class="w-100 d-flex flex-column flex-lg-row justify-content-lg-between align-items-lg-center col-12">
+                        <div class="d-flex align-items-center">
+                            <div class="d-flex align-items-center">
+                                <div class="number number-winner">${data[i].percentage}%</div>
+                                <img src="./assets/content/earphones/${data[i].image}" alt="Obrázek" width="48">
+                            </div>
+                            <div>
+                                <h3 class="mb-0">${data[i].name}</h3>
+                                <h6 class="mb-0 fw-normal">${data[i].manufacturer}</h6>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="price">${data[i].price} Kč</div>
+                        </div>
+                    </div>
+                    <div class="option-specs col-12">
+                        <div class="d-flex flex-column flex-lg-row w-100 justify-content-between align-items-center">
+                            <div class="d-flex justify-content-start w-100 row flex-wrap g-2">
+                                <div class="d-flex justify-content-start align-items-center col-6 col-lg-3 col-xl-2">
+                                    <i class="ph ph-cpu fs-4"></i>
+                                    <div class="ms-3">
+                                        <h6 class="mb-0 fw-normal">Platforma</h6>
+                                        <h4 class="mb-0">${data[i].compability}</h4>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-start align-items-center col-6 col-lg-3 col-xl-2">
+                                    <i class="ph ph-cell-signal-full fs-4"></i>
+                                    <div class="ms-3">
+                                        <h6 class="mb-0 fw-normal">Konektivita</h6>
+                                        <h4 class="mb-0">${data[i].connectivity}</h4>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-start align-items-center col-6 col-lg-3 col-xl-2">
+                                    <i class="ph ph-plug fs-4"></i>
+                                    <div class="ms-3">
+                                        <h6 class="mb-0 fw-normal">Nabíjení</h6>
+                                        <h4 class="mb-0">${data[i].charging}</h4>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-start align-items-center col-6 col-lg-3 col-xl-2">
+                                    <i class="ph ph-battery-full fs-4"></i>
+                                    <div class="ms-3">
+                                        <h6 class="mb-0 fw-normal">Výdrž baterie</h6>
+                                        <h4 class="mb-0">${data[i].battery_life}h</h4>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-start align-items-center col-6 col-lg-3 col-xl-2">
+                                    <i class="ph ph-drop fs-4"></i>
+                                    <div class="ms-3">
+                                        <h6 class="mb-0 fw-normal">Ochrana</h6>
+                                        <h4 class="mb-0">${data[i].ip_rating}</h4>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-start align-items-center col-6 col-lg-3 col-xl-2">
+                                    <i class="ph ph-wind fs-4"></i>
+                                    <div class="ms-3">
+                                        <h6 class="mb-0 fw-normal">Potlačení hluku</h6>
+                                        <h4 class="mb-0">${data[i].noise_cancelling}</h4>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-start align-items-center col-6 col-lg-3 col-xl-2">
+                                    <i class="ph ph-speaker-hifi fs-4"></i>
+                                    <div class="ms-3">
+                                        <h6 class="mb-0 fw-normal">Hi-Fi?</h6>
+                                        <h4 class="mb-0">${data[i].hifi}</h4>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-start align-items-center col-6 col-lg-3 col-xl-2">
+                                    <i class="ph ph-microphone fs-4"></i>
+                                    <div class="ms-3">
+                                        <h6 class="mb-0 fw-normal">Mikrofon</h6>
+                                        <h4 class="mb-0">${data[i].microphone}</h4>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-start align-items-center col-6 col-lg-3 col-xl-2">
+                                    <i class="ph ph-triangle fs-4"></i>
+                                    <div class="ms-3">
+                                        <h6 class="mb-0 fw-normal">Typ</h6>
+                                        <h4 class="mb-0">${data[i].type}</h4>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-start align-items-center col-6 col-lg-3 col-xl-2">
+                                    <i class="ph ph-hammer fs-4"></i>
+                                    <div class="ms-3">
+                                        <h6 class="mb-0 fw-normal">Materiál</h6>
+                                        <h4 class="mb-0">${data[i].material}</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>`
 
-                const itemNumber = document.createElement("div");
-                itemNumber.className = "number";
-                itemNumber.textContent = data[i].percentage + "%";
-
-                const itemImage = document.createElement("img");
-                itemImage.src = `./assets/content/earphones/${data[i].image}`;
-                itemImage.alt = "Obrázek";
-                itemImage.width = "48";
-
-                const itemHeading = document.createElement("h3");
-                itemHeading.textContent = data[i].name;
-
-                const itemPrice = document.createElement("p");
-                itemPrice.className = "price";
-                itemPrice.textContent = data[i].price + " Kč";
-
-                const itemCompability = document.createElement("p");
-                itemCompability.textContent = data[i].compability;
-
-                itemOption.appendChild(itemNumber);
-                itemOption.appendChild(itemImage);
-                itemOption.appendChild(itemHeading);
-                itemOption.appendChild(itemCompability);
-                itemOption.appendChild(itemPrice);
-                itemContainer.appendChild(itemOption);
-
+                itemContainer.innerHTML = itemCode;
+                
                 document.getElementById("row").appendChild(itemContainer);
             }
 

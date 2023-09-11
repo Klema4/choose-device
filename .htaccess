@@ -1,0 +1,32 @@
+RewriteEngine on
+
+
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^ /%1 [NC,L,R]
+
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^ %{REQUEST_URI}.html [NC,L]
+
+# Custom 400 errors
+ErrorDocument 400 /errors/error.html
+
+# Custom 401 errors
+ErrorDocument 401 /errors/error.html
+
+# Custom 403 errors
+ErrorDocument 403 /errors/error.html
+
+# Custom 404 errors
+ErrorDocument 404 /errors/error.html
+
+# Custom 500 errors
+ErrorDocument 500 /errors/error.html
+
+# Prevent viewing of .htaccess file
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>
+
+# Prevent directory listings
+Options All -Indexes

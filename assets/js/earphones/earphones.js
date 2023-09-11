@@ -314,11 +314,24 @@ function generate() {
 
             for (let i = 0; i < data.length; i++) {
                 // Vypočti rozdíl mezi průměrem a jednotlivými "percentage" ze všech položek
-                data[i].percentage = data[i].percentage - percentageAverage;
+                data[i].percentage = (data[i].percentage - percentageAverage).toFixed(1);
             }
 
             // Delete all HTML elements from "row" id
             document.getElementById("row").innerHTML = "";
+
+            
+            // Sort percentage from highest to lowest value
+            data.sort(function (a, b) {
+                return parseFloat(b.percentage) - parseFloat(a.percentage);
+            });
+
+            // All items that have percentage lower than 0 will have percentage 0
+            for (let i = 0; i < data.length; i++) {
+                if (data[i].percentage < 0) {
+                    data[i].percentage = 0;
+                }
+            }
 
             for (let i = 0; i < 1; i++) {
                 const winnerContainer = document.createElement("div");
@@ -333,7 +346,7 @@ function generate() {
                                 <img src="./assets/content/earphones/${data[0].image}" alt="Obrázek" width="48">
                             </div>
                             <div>
-                                <h3 class="mb-0">${data[0].name}</h3>
+                                <a href="/earphones/info?id=${i}" class="mb-0 fs-3 fw-bold text-decoration-none text-white">${data[i].name}</a>
                                 <h6 class="mb-0 fw-normal">${data[0].manufacturer}</h6>
                             </div>
                         </div>
@@ -425,7 +438,6 @@ function generate() {
                 document.getElementById("row").appendChild(winnerContainer);
             }
 
-            // Create HTML elements for all remaining items after sorting and append them to the "row" id
             for (let i = 1; i < data.length; i++) {
                 const itemContainer = document.createElement("div");
 
@@ -439,7 +451,7 @@ function generate() {
                                 <img src="./assets/content/earphones/${data[i].image}" alt="Obrázek" width="48">
                             </div>
                             <div>
-                                <h3 class="mb-0">${data[i].name}</h3>
+                                <a href="/earphones/info?id=${i}" class="mb-0 fs-3 fw-bold text-decoration-none text-white">${data[i].name}</a>
                                 <h6 class="mb-0 fw-normal">${data[i].manufacturer}</h6>
                             </div>
                         </div>

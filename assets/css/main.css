@@ -249,10 +249,37 @@ footer:hover {
 
 .background-image {
     z-index: -1;
-    position: fixed;
+    position: absolute;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
+    &.earphones {
+        background-image: url('../content/main-site/nothing.png');
+        width: 720px;
+        height: 720px;
+        top: -10vw;
+        right: 2vh;
+        filter: blur(5px) brightness(0.5);
+    }
+    
+    &.phones {
+        background-image: url('../content/main-site/main-kv-2023\ 1.png');
+        width: 720px;
+        height: 720px;
+        top: 25vw;
+        left: 2vh;
+        filter: blur(5px) brightness(0.5);
+    }
+    
+    &.headphones {
+        background-image: url('../content/main-site/image\ 1.png');
+        width: 540px;
+        height: 600px;
+        top: 30vw;
+        right: 10vh;
+        filter: blur(5px) brightness(0.5);
+    }
 
     @media screen and (max-width: 1919px) {
         &.earphones {
@@ -267,33 +294,6 @@ footer:hover {
             display: none;
         }
     }
-}
-
-&.earphones {
-    background-image: url('../content/main-site/nothing.png');
-    width: 720px;
-    height: 720px;
-    top: -10vw;
-    right: 2vh;
-    filter: blur(5px) brightness(0.5);
-}
-
-&.phones {
-    background-image: url('../content/main-site/main-kv-2023\ 1.png');
-    width: 720px;
-    height: 720px;
-    top: 25vw;
-    left: 2vh;
-    filter: blur(5px) brightness(0.5);
-}
-
-&.headphones {
-    background-image: url('../content/main-site/image\ 1.png');
-    width: 540px;
-    height: 600px;
-    top: 30vw;
-    right: 10vh;
-    filter: blur(5px) brightness(0.5);
 }
 
 .card {
@@ -369,11 +369,16 @@ footer:hover {
     width: 100%;
     height: 250px;
     border-radius: var(--b-radius-card);
-    background-color: var(--primary);
 
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
+
+    transition: transform 0.2s var(--transition);
+
+    &:hover {
+        transform: scale(1.05) translateY(-5px) rotate3d(0, 5, 1, 5deg);
+    }
 }
 
 .icon-card {

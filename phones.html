@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PickPerfect | Telefony</title>
 
-    <link rel="preconnect" href="https://api.fonts.coollabs.io" crossorigin />
-    <link href="https://api.fonts.coollabs.io/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -23,7 +24,7 @@
 </head>
 
 <body>
-    <div class="container my-5 my-lg-0">
+    <div class="container my-5 my-lg-0 d-none">
         <nav class="navbar navbar-expand-lg mt-3 mt-lg-4">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
@@ -60,17 +61,30 @@
         </nav>
     </div>
 
-    <div class="row g-2 col-lg-9 mx-auto m-0 mt-5" id="container-form-1">
-        <div class="h-100 d-flex justify-content-center align-items-center col-md">
-            <img src="./assets/content/phones/placeholder-phones/Pixel 6 Pro.webp" alt="Obrázek" width="90%">
+    <div class="container mb-5 pb-lg-5">
+        <div class="quiz-progress">
+            <div id="quiz-progress-line"></div>
         </div>
-        <div class="h-100 col-md">
-            <h1 class="display-4">Jaký OS mobilu preferuješ?</h1>
+        <div class="d-none d-md-flex quiz-sections">
+            <p id="quiz-1" class="small me-3 active">1. Operační systém</p>
+            <p id="quiz-2" class="small me-3">2. Cena</p>
+            <p id="quiz-3" class="small me-3">3. Hlavní specifikace</p>
+            <p id="quiz-4" class="small me-3">4. Fotoaparát</p>
+            <p id="quiz-5" class="small me-3">5. Velikost</p>
+        </div>
+    </div>
+
+    <div class="row g-2 container mx-auto" id="container-form-1">
+        <div class="col-md">
+            <h5>1. Operační systém</h5>
+            <h1 class="display-4">Jaký operační systém mobilu preferuješ?</h1>
+        </div>
+        <div class="col-md d-flex flex-column align-items-end justify-content-end">
             <div>
-                <form id="phones-os" class="mb-4 h-100 w-100 m-0 row g-2 row-cols-2">
+                <form id="phones-os" class="mb-4 h-100 w-100 m-0 row g-2 row-cols-1 row-cols-lg-2">
                     <div class="col">
-                        <input type="radio" class="btn-check" name="options" id="price-1000" autocomplete="off" checked>
-                        <label class="btn btn-radio btn-radio-phone" for="price-1000">
+                        <input type="radio" class="btn-check" name="options" id="android" autocomplete="off" checked>
+                        <label class="btn btn-radio btn-radio-phone h-100" for="android">
                             <div class="d-flex flex-column justify-content-end h-100">
                                 <i class="ph ph-android-logo display-3"></i>
                                 <h1>Android</h1>
@@ -80,8 +94,8 @@
                     </div>
                     
                     <div class="col">
-                        <input type="radio" class="btn-check" name="options" id="price-2000" autocomplete="off">
-                        <label class="btn btn-radio btn-radio-phone" for="price-2000">
+                        <input type="radio" class="btn-check" name="options" id="ios" autocomplete="off">
+                        <label class="btn btn-radio btn-radio-phone h-100" for="ios">
                             <div class="d-flex flex-column justify-content-end h-100">
                                 <i class="ph ph-apple-logo display-3"></i>
                                 <h1>iOS</h1>
@@ -91,9 +105,165 @@
                     </div>
                 </form>
             </div>
+            <div class="d-flex justify-content-between mt-3 w-100">
+                <button class="btn btn-outline-light px-4 py-3" id="back" onclick="back();">Přejít zpět</button>
+                <button class="btn btn-primary px-4 py-3" id="next" onclick="next();">Pokračovat <i class="ph ph-arrow-up-right"></i></button>
+            </div>
         </div>
     </div>
-    <script src="./assets/js/earphones/earphones.js"></script>
+
+    <div class="row g-2 container mx-auto visually-hidden" id="container-form-2">
+        <div class="col-md">
+            <h5>2. Extrémní brácho</h5>
+            <h1 class="display-4">Jsi fakt gigachad ngl</h1>
+        </div>
+        <div class="col-md d-flex flex-column align-items-end justify-content-end">
+            <div>
+                <form id="phones-os" class="mb-4 h-100 w-100 m-0 row g-2 row-cols-1 row-cols-lg-2">
+                    <div class="col">
+                        <input type="radio" class="btn-check" name="options" id="android" autocomplete="off" checked>
+                        <label class="btn btn-radio btn-radio-phone h-100" for="android">
+                            <div class="d-flex flex-column justify-content-end h-100">
+                                <i class="ph ph-android-logo display-3"></i>
+                                <h1>Android</h1>
+                                <p>Vyber si z nekonečné nabídky Android zařízení, od ohebných po malé a kompaktní.</p>
+                            </div>
+                        </label>
+                    </div>
+                    
+                    <div class="col">
+                        <input type="radio" class="btn-check" name="options" id="ios" autocomplete="off">
+                        <label class="btn btn-radio btn-radio-phone h-100" for="ios">
+                            <div class="d-flex flex-column justify-content-end h-100">
+                                <i class="ph ph-apple-logo display-3"></i>
+                                <h1>iOS</h1>
+                                <p>Není toho tolik na výběr, ale o to jednodušší a rychlejší je možnost si vybrat. Jdeš do jablka?</p>
+                            </div>
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="d-flex justify-content-between mt-3 w-100">
+                <button class="btn btn-outline-light px-4 py-3" id="back" onclick="back();">Přejít zpět</button>
+                <button class="btn btn-primary px-4 py-3" id="next" onclick="next();">Pokračovat <i class="ph ph-arrow-up-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-2 container mx-auto visually-hidden" id="container-form-3">
+        <div class="col-md">
+            <h5>2. Extrémní brácho</h5>
+            <h1 class="display-4">Jsi fakt gigachad ngl</h1>
+        </div>
+        <div class="col-md d-flex flex-column align-items-end justify-content-end">
+            <div>
+                <form id="phones-os" class="mb-4 h-100 w-100 m-0 row g-2 row-cols-1 row-cols-lg-2">
+                    <div class="col">
+                        <input type="radio" class="btn-check" name="options" id="android" autocomplete="off" checked>
+                        <label class="btn btn-radio btn-radio-phone h-100" for="android">
+                            <div class="d-flex flex-column justify-content-end h-100">
+                                <i class="ph ph-android-logo display-3"></i>
+                                <h1>Android</h1>
+                                <p>Vyber si z nekonečné nabídky Android zařízení, od ohebných po malé a kompaktní.</p>
+                            </div>
+                        </label>
+                    </div>
+                    
+                    <div class="col">
+                        <input type="radio" class="btn-check" name="options" id="ios" autocomplete="off">
+                        <label class="btn btn-radio btn-radio-phone h-100" for="ios">
+                            <div class="d-flex flex-column justify-content-end h-100">
+                                <i class="ph ph-apple-logo display-3"></i>
+                                <h1>iOS</h1>
+                                <p>Není toho tolik na výběr, ale o to jednodušší a rychlejší je možnost si vybrat. Jdeš do jablka?</p>
+                            </div>
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="d-flex justify-content-between mt-3 w-100">
+                <button class="btn btn-outline-light px-4 py-3" id="back" onclick="back();">Přejít zpět</button>
+                <button class="btn btn-primary px-4 py-3" id="next" onclick="next();">Pokračovat <i class="ph ph-arrow-up-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-2 container mx-auto visually-hidden" id="container-form-4">
+        <div class="col-md">
+            <h5>2. Extrémní brácho</h5>
+            <h1 class="display-4">Jsi fakt gigachad ngl</h1>
+        </div>
+        <div class="col-md d-flex flex-column align-items-end justify-content-end">
+            <div>
+                <form id="phones-os" class="mb-4 h-100 w-100 m-0 row g-2 row-cols-1 row-cols-lg-2">
+                    <div class="col">
+                        <input type="radio" class="btn-check" name="options" id="android" autocomplete="off" checked>
+                        <label class="btn btn-radio btn-radio-phone h-100" for="android">
+                            <div class="d-flex flex-column justify-content-end h-100">
+                                <i class="ph ph-android-logo display-3"></i>
+                                <h1>Android</h1>
+                                <p>Vyber si z nekonečné nabídky Android zařízení, od ohebných po malé a kompaktní.</p>
+                            </div>
+                        </label>
+                    </div>
+                    
+                    <div class="col">
+                        <input type="radio" class="btn-check" name="options" id="ios" autocomplete="off">
+                        <label class="btn btn-radio btn-radio-phone h-100" for="ios">
+                            <div class="d-flex flex-column justify-content-end h-100">
+                                <i class="ph ph-apple-logo display-3"></i>
+                                <h1>iOS</h1>
+                                <p>Není toho tolik na výběr, ale o to jednodušší a rychlejší je možnost si vybrat. Jdeš do jablka?</p>
+                            </div>
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="d-flex justify-content-between mt-3 w-100">
+                <button class="btn btn-outline-light px-4 py-3" id="back" onclick="back();">Přejít zpět</button>
+                <button class="btn btn-primary px-4 py-3" id="next" onclick="next();">Pokračovat <i class="ph ph-arrow-up-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-2 container mx-auto visually-hidden" id="container-form-5">
+        <div class="col-md">
+            <h5>2. Extrémní brácho</h5>
+            <h1 class="display-4">Jsi fakt gigachad ngl</h1>
+        </div>
+        <div class="col-md d-flex flex-column align-items-end justify-content-end">
+            <div>
+                <form id="phones-os" class="mb-4 h-100 w-100 m-0 row g-2 row-cols-1 row-cols-lg-2">
+                    <div class="col">
+                        <input type="radio" class="btn-check" name="options" id="android" autocomplete="off" checked>
+                        <label class="btn btn-radio btn-radio-phone h-100" for="android">
+                            <div class="d-flex flex-column justify-content-end h-100">
+                                <i class="ph ph-android-logo display-3"></i>
+                                <h1>Android</h1>
+                                <p>Vyber si z nekonečné nabídky Android zařízení, od ohebných po malé a kompaktní.</p>
+                            </div>
+                        </label>
+                    </div>
+                    
+                    <div class="col">
+                        <input type="radio" class="btn-check" name="options" id="ios" autocomplete="off">
+                        <label class="btn btn-radio btn-radio-phone h-100" for="ios">
+                            <div class="d-flex flex-column justify-content-end h-100">
+                                <i class="ph ph-apple-logo display-3"></i>
+                                <h1>iOS</h1>
+                                <p>Není toho tolik na výběr, ale o to jednodušší a rychlejší je možnost si vybrat. Jdeš do jablka?</p>
+                            </div>
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="d-flex justify-content-between mt-3 w-100">
+                <button class="btn btn-outline-light px-4 py-3" id="back" onclick="back();">Přejít zpět</button>
+                <button class="btn btn-primary px-4 py-3" id="generate" onclick="generate();">Ukázat výsledky <i class="ph ph-arrow-up-right"></i></button>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/js/phones/phones.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 

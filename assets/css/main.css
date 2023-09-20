@@ -51,6 +51,13 @@ a:hover {
 .btn {
     border-radius: var(--b-radius-btn);
     transition: background-color 0.2s var(--transition), border-color 0.2s var(--transition), color 0.2s var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & i {
+        margin-left: 0.5rem;
+    }
 
     &.btn-primary {
         border: 1px solid var(--primary);
@@ -129,6 +136,10 @@ footer:hover {
     color: var(--primary) !important;
 }
 
+.active {
+    transition: color 0.3s var(--transition);
+}
+
 .form-check-input {
     clip: rect(0 0 0 0);
     position: absolute;
@@ -152,7 +163,7 @@ footer:hover {
     aspect-ratio: 1/0.9;
 
     @media screen and (max-width: 1300px) {
-        
+        aspect-ratio: unset;
     }
 
     & p {
@@ -406,4 +417,19 @@ footer:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.quiz-progress {
+    width: 100%;
+    height: 0.75rem;
+    background-color: var(--layer2);
+    border-radius: 0 0 var(--b-radius-card) var(--b-radius-card);
+    overflow: hidden;
+
+    & #quiz-progress-line {
+        width: 20%;
+        height: 0.75rem;
+        background-color: var(--primary);
+        transition: width 0.5s var(--transition);
+    }
 }

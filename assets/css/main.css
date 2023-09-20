@@ -148,6 +148,18 @@ footer:hover {
     transition: background-color 0.2s var(--transition), border-color 0.2s var(--transition), color 0.2s var(--transition);
 }
 
+.btn-radio-phone {
+    aspect-ratio: 1/0.9;
+
+    @media screen and (max-width: 1300px) {
+        
+    }
+
+    & p {
+        color: var(--header);
+    }
+}
+
 .btn-check+.btn:hover {
     background-color: var(--primary-hover);
     border-color: var(--primary-hover);

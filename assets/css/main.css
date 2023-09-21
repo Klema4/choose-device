@@ -51,9 +51,6 @@ a:hover {
 .btn {
     border-radius: var(--b-radius-btn);
     transition: background-color 0.2s var(--transition), border-color 0.2s var(--transition), color 0.2s var(--transition);
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
     & i:not(.btn-radio-phone > * > i) {
         margin-left: 0.5rem;

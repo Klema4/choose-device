@@ -106,16 +106,10 @@ function generate() {
 
             // Get checked radio button ID from form
             const os = document.querySelector('form#phones-os input:checked').id;
-            const type = document.querySelector('form#earphones-type input:checked').id;
-            const compability = document.querySelector('form#earphones-compability input:checked').id;
-            const shape = document.querySelector('form#earphones-shape input:checked').id;
-            const mic = document.querySelector('form#earphones-mic input:checked').id;
-            const hifi = document.querySelector('form#earphones-hifi input:checked').id;
-            const charging = document.querySelector('form#earphones-charging input:checked').id;
-            const connectivity = document.querySelector('form#earphones-connectivity input:checked').id;
-            const noise_cancelling = document.querySelector('form#earphones-noise-cancelling input:checked').id;
-            const ip_rating = document.querySelector('form#earphones-ip-rating input:checked').id;
-            const battery_life = document.querySelector('form#earphones-battery-life input:checked').id;
+            const price = document.querySelector('form#phones-price input:checked').id;
+            const features = document.querySelector('form#phones-features input:checked').id;
+            const camera = document.querySelector('form#phones-camera input:checked').id;
+            const size = document.querySelector('form#phones-size input:checked').id;
 
             switch (os) {
                 case "android":
@@ -135,39 +129,79 @@ function generate() {
                     break;
             }
 
-            switch (type) {
-                case "buds":
-                    // Add 10% into "percentage" from JSON file to all items, that have "type" value "buds"
+            switch (price) {
+                case "5000":
+                    // Add 10% into "percentage" from JSON file to all items, that have "price" value "5000" or lower
                     for (let i = 0; i < data.length; i++) {
-                        if (data[i].type == "Buds") {
-                            data[i].percentage = data[i].percentage + 6;
+                        if (data[i].price <= 5000) {
+                            data[i].percentage = data[i].percentage + 10;
                         }
                     }
                     break;
-                case "in-ear":
-                    // Add 10% into "percentage" from JSON file to all items, that have "type" value "in-ear"
+                case "10000":
+                    // Add 10% into "percentage" from JSON file to all items, that have "price" value "10000" or lower
                     for (let i = 0; i < data.length; i++) {
-                        if (data[i].type == "In-Ear") {
-                            data[i].percentage = data[i].percentage + 6;
+                        if (data[i].price <= 10000) {
+                            data[i].percentage = data[i].percentage + 10;
+                        }
+                    }
+                    break;
+                case "20000":
+                    // Add 10% into "percentage" from JSON file to all items, that have "price" value "20000" or lower
+                    for (let i = 0; i < data.length; i++) {
+                        if (data[i].price <= 20000) {
+                            data[i].percentage = data[i].percentage + 10;
+                        }
+                    }
+                    break;
+                case "30000":
+                    // Add 10% into "percentage" from JSON file to all items, that have "price" value "30000" or lower
+                    for (let i = 0; i < data.length; i++) {
+                        if (data[i].price <= 30000) {
+                            data[i].percentage = data[i].percentage + 10;
+                        }
+                    }
+                    break;
+                case "unlimited":
+                    // Add 10% into "percentage" from JSON file to all items, that have "price" value "20000" or higher
+                    for (let i = 0; i < data.length; i++) {
+                        if (data[i].price >= 20000) {
+                            data[i].percentage = data[i].percentage + 10;
                         }
                     }
                     break;
             }
 
-            switch (compability) {
-                case "Android":
-                    // Add 10% into "percentage" from JSON file to all items, that have "compability" value "Android"
+            switch (camera) {
+                case "camera-1":
+                    // Add 10% into "percentage" from JSON file to all items, that have "camera_rating" value "1"
                     for (let i = 0; i < data.length; i++) {
-                        if (data[i].compability == "Android") {
-                            data[i].percentage = data[i].percentage + 15;
+                        if (data[i].camera_rating == 1) {
+                            data[i].percentage = data[i].percentage + 10;
                         }
                     }
                     break;
-                case "iOS":
-                    // Add 10% into "percentage" from JSON file to all items, that have "compability" value "iOS"
+                case "camera-2":
+                    // Add 10% into "percentage" from JSON file to all items, that have "camera_rating" value "2"
                     for (let i = 0; i < data.length; i++) {
-                        if (data[i].compability == "iOS") {
-                            data[i].percentage = data[i].percentage + 15;
+                        if (data[i].camera_rating == 2) {
+                            data[i].percentage = data[i].percentage + 10;
+                        }
+                    }
+                    break;
+                case "camera-3":
+                    // Add 10% into "percentage" from JSON file to all items, that have "camera_rating" value "3" or "2"
+                    for (let i = 0; i < data.length; i++) {
+                        if (data[i].camera_rating == 3 || data[i].camera_rating == 2) {
+                            data[i].percentage = data[i].percentage + 10;
+                        }
+                    }
+                    break;
+                case "camera-4":
+                    // Add 10% into "percentage" from JSON file to all items, that have "camera_rating" value 3 or higher
+                    for (let i = 0; i < data.length; i++) {
+                        if (data[i].camera_rating >= 3) {
+                            data[i].percentage = data[i].percentage + 10;
                         }
                     }
                     break;

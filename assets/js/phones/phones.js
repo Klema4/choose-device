@@ -3,6 +3,7 @@ const generateButton = document.getElementById("generate");
 const backButton = document.getElementById("back");
 var current = "container-form-1";
 const progress = document.getElementById("quiz-progress-line");
+const progress2 = document.getElementById("progress");
 
 if (current == "container-form-1") {
     backButton.classList.add("d-none");
@@ -439,6 +440,10 @@ function generate() {
                     data[i].percentage = 0;
                 }
             }
+
+            progress.style.display = "none";
+            document.getElementById("container-form-5").classList.add("visually-hidden");
+            document.getElementById("nav").classList.remove("d-none");
 
             for (let i = 0; i < 1; i++) {
                 const winnerContainer = document.createElement("div");
